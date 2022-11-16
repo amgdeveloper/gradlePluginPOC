@@ -27,7 +27,6 @@ dependencies {
 gradlePlugin {
     plugins {
         create("thisIsMyPlugin") {
-            //create("customSamplePlugin") {
             id = "com.my.company.myartifactid"
             implementationClass = "mysampleplugin.SecretsManagerPlugin"
         }
