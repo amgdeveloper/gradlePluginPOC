@@ -29,7 +29,7 @@ gradlePlugin {
         create("thisIsMyPlugin") {
             //create("customSamplePlugin") {
             id = "com.my.company.myartifactid"
-            implementationClass = "mysampleplugin.MyDecryptionPlugin"
+            implementationClass = "mysampleplugin.SecretsManagerPlugin"
         }
     }
 }
@@ -51,5 +51,4 @@ publishing {
 java {
     sourceCompatibility = JavaVersion.VERSION_11
     targetCompatibility = JavaVersion.VERSION_11
-
 }
