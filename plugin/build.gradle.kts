@@ -8,7 +8,7 @@ plugins {
     `maven-publish`
 }
 group = "com.my.company"
-version = "1.4.0"
+version = "0.0.0"
 
 
 repositories {
@@ -40,7 +40,7 @@ publishing {
         create<MavenPublication>("maven") {
             groupId = "com.my.company"
             artifactId = "myartifactid"
-            version = "1.4.0"
+            version = "0.0.0"
             from(components["kotlin"])
         }
     }
