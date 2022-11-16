@@ -3,7 +3,7 @@ package mysampleplugin
 import org.gradle.api.DefaultTask
 import org.gradle.api.tasks.TaskAction
 
-class CustomDecryptionTask : DefaultTask() {
+open class CustomDecryptionTask : DefaultTask() {
 
     @TaskAction
     fun checkDependency() {

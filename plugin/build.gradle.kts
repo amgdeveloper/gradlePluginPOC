@@ -1,20 +1,17 @@
 
 plugins {
-    // Apply the Java Gradle plugin development plugin to add support for developing Gradle plugins
     `java-gradle-plugin`
 
     // Apply the Kotlin JVM plugin to add support for Kotlin.
     id("org.jetbrains.kotlin.jvm") version "1.6.21"
     java
-    `maven-publish` //Adding this because `maven` is not resolved
+    `maven-publish`
 }
-
 group = "com.my.company"
-version = "1.0.0"
+version = "1.4.0"
 
 
 repositories {
-    // Use Maven Central for resolving dependencies.
     mavenCentral()
 }
 
@@ -26,28 +23,33 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 }
 
+/* Define the gradle plugin using java-gradle-plugin */
 gradlePlugin {
     plugins {
-        create("customSamplePlugin") {
-            id = "com.my.company.customSamplePlugin"
-            implementationClass = "plugin.MyDecryptionPlugin"
+        create("thisIsMyPlugin") {
+            //create("customSamplePlugin") {
+            id = "com.my.company.myartifactid"
+            implementationClass = "mysampleplugin.MyDecryptionPlugin"
         }
     }
 }
 
 
-//publishing {
-//
-//    publications {
-//        create<MavenPublication>("maven") {
-//            groupId = "com.my.company"
-//            artifactId = "customSamplePlugin"
-//            version = "1.4"
-//
-//            from(components["kotlin"])
-//        }
-//    }
-//}
+publishing {
+
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "com.my.company"
+            artifactId = "myartifactid"
+            version = "1.4.0"
+            from(components["kotlin"])
+        }
+    }
+}
 
 
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
 
+}
