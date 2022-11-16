@@ -22,7 +22,7 @@ dependencies {
 /* Define the gradle plugin using java-gradle-plugin */
 gradlePlugin {
     plugins {
-        create("thisIsMyPlugin") {
+        create("secretsManager") {
             id = "com.newscorp.gts.secretsmanager"
             implementationClass = "com.newscorp.gts.SecretsManagerPlugin"
         }
@@ -33,7 +33,6 @@ group = "com.newscorp.gts"
 version = "0.0.0"
 
 publishing {
-
     publications {
         create<MavenPublication>("maven") {
             groupId = "com.newscorp.gts"
