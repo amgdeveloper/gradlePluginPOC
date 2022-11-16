@@ -6,7 +6,7 @@ import org.gradle.api.tasks.TaskAction
 open class DecryptSecretsTask : DefaultTask() {
 
     @TaskAction
-    fun checkDependency() {
+    fun decryptSecrets() {
         println("POC: decrypting secrets")
     }
 }
